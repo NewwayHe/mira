@@ -1,0 +1,23 @@
+# Compiled binaries
+*.exe
+*.obj
+*.o
+
+# NASM output / build intermediates
+out/
+*.asm
+
+# Editor / IDE
+.vscode/
+.vs/
+*.swp
+*.swo
+*~
+
+# OS generated
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Gemini
+.gemini/
