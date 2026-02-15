@@ -1,0 +1,15 @@
+# io.mira – 输入输出封装
+# 基于内建 print read input
+
+# 打印后换行（print 已带换行，此为别名）
+println: { x } x print
+
+# 打印空格分隔的多个值（需先压栈）
+# 例：1 2 3  print-spaced -> "1 2 3"
+print-spaced: { a b } a b print print
+
+# 提示并读整数
+prompt-int: { prompt } prompt print read
+
+# 提示并读一行字符串（返回 ptr，需 free）
+prompt-line: { prompt } prompt print input

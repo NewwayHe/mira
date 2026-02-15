@@ -1,0 +1,32 @@
+# math.mira – 数学工具库
+# abs min max 为内建词，此处提供组合与浮点封装
+
+const pi : 3.141592653589793
+const e  : 2.718281828459045
+
+# 限制值在 [lo, hi] 范围内
+clamp: { val lo hi } val lo max hi min
+
+# 判断 val 是否在 [a, b] 闭区间内
+between: { val a b } val a >= val b <= and
+
+# 判断 val 是否在 (a, b) 开区间内
+between_open: { val a b } val a > val b < and
+
+# 平方（整数）
+square: { n } n n *
+
+# 浮点平方根：x -> sqrt(x)
+sqrt_int: { n } n int->float f-sqrt float->int
+
+# 浮点幂：base exp -> base^exp
+pow_int: { base exp } base int->float exp int->float f-pow float->int
+
+# 整数取模（与 % 等价，便于命名）
+mod: { a b } a b %
+
+# 浮点向下取整
+floor_f: { x } x f-floor float->int
+
+# 浮点向上取整
+ceil_f: { x } x f-ceil float->int

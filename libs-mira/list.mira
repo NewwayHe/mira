@@ -1,0 +1,20 @@
+# list.mira – 列表工具
+# 基于内建 list-new list-get list-set list-len list-push list-pop list-free
+import "utils.mira"
+
+# 打印列表所有元素（每行一个）
+# 用法：lst list-print
+list-print: { lst }
+  lst @ list-len { lst @ print swap list-get print } for
+
+# 列表求和
+list-sum: { lst }
+  sum: 0
+  lst @ list-len { lst @ print swap list-get sum @ + sum ! } for
+  sum @
+
+# 列表最大值（假设非空）
+list-max: { lst }
+  m: lst @ 0 list-get
+  lst @ list-len { lst @ print swap list-get m @ max m ! } for
+  m @

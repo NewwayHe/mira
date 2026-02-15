@@ -1,0 +1,12 @@
+# time.mira – 时间库
+# time-now: 0 -> 当前 Unix 时间戳（秒）
+# time-ms: 0 -> 毫秒（Windows 为系统启动后毫秒数）
+
+# 简单计时：记录开始时间，返回可传给 elapsed-ms 的句柄
+# 注意：Mira 无闭包，需用变量保存
+# 用法：0 start: 0  time-ms start !
+#      ... 做事情 ...
+#      start @ time-ms - print  # 打印耗时毫秒
+
+# 打印当前时间戳
+now: { time-now print }

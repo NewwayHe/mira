@@ -1,0 +1,18 @@
+# random.mira – 随机数库
+import "utils.mira"
+# random-int: 0 -> [0, RAND_MAX] 的随机整数
+# random-range: min max -> [min, max) 的随机整数
+# random-seed: seed -> 设置随机种子
+
+# 从列表中随机选一个元素（栈：list -> elem）
+# list-get 需要 list index，故先 index 再 list
+list_random_choice: { lst }
+  lst @ dup list-len 0 swap random-range swap list-get
+
+# 便捷：0 100 random-range 等价于 [0, 100) 的随机数
+rand_0_100: { 0 100 random-range }
+rand_1_6: { 1 7 random-range }
+rand_1_100: { 1 101 random-range }
+
+# 用时间戳初始化种子（在程序开头调用一次）
+random_init: { time-now random-seed }

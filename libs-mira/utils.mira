@@ -1,0 +1,10 @@
+# utils.mira – 通用工具
+add: { a b } a b +
+double: { x } x 2 *
+triple: { x } x 3 *
+negate: { n } 0 n -
+
+# 栈操作
+swap: { a b } b a
+dup: { x } x x
+over: { a b } a b a

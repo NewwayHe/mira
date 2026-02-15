@@ -1,0 +1,26 @@
+# string.mira – 字符串扩展库
+# str-contains: str substr -> 0/1
+# str-trim: str -> 去首尾空白（需 free）
+# str-at: str index -> 索引处字符 ASCII 码，越界 -1
+# str-substr: str start n -> 子串（需 free）
+
+# 判断字符串是否为空（null 或 len=0）
+str_empty: { s } s 0 = s str-len 0 = or
+
+# 判断是否包含子串
+str_has: { s sub } s sub str-contains 0 !=
+
+# 去除首尾空白
+str_strip: { s } s str-trim
+
+# 取索引处字符（返回 ASCII 码）
+str_at: { s i } s i str-at
+
+# 取子串：s start n -> 新串
+str_substr: { s start n } s start n str-substr
+
+# 取首字符
+str_first: { s } s 0 str-at
+
+# 取末字符
+str_last: { s } s s str-len 1 - str-at
